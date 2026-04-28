@@ -8,12 +8,12 @@
         "2euros": "1"
     },
     "billets": {
-        "5euros": "1",
-        "10euros": "1",
+        "5euros": "7",
+        "10euros": "6",
         "20euros": "1"
     },
     "bancontact": {
         "Total Bancontact": "2"
     },
-    "total": 40.8
+    "total": 120.8
 }

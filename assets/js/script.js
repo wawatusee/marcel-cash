@@ -1,53 +1,34 @@
-/**
- * Gestion des comptes de caisse - Boulangerie
- * - Calcul du total en temps réel
- * - Gestion des boutons d'incrémentation
- */
+
+// Attendre que le DOM soit chargé
 document.addEventListener('DOMContentLoaded', function() {
-    // Éléments clés
     const form = document.getElementById('comptesForm');
     const totalSpan = document.getElementById('total');
 
-    if (!form || !totalSpan) {
-        console.error("Éléments critiques manquants : vérifiez 'comptesForm' et 'total' dans le HTML.");
-        return;
-    }
-
-    /**
-     * Met à jour le total affiché
-     */
+    // Fonction pour calculer le total
     function updateTotal() {
         let total = 0;
         const inputs = form.querySelectorAll('input[type="number"]');
-
         inputs.forEach(input => {
             const quantity = parseFloat(input.value) || 0;
             const value = parseFloat(input.dataset.valeur) || 0;
             total += quantity * value;
         });
-
         totalSpan.textContent = total.toFixed(2) + ' €';
     }
 
-    // Écoute les modifications manuelles dans les champs
-    form.addEventListener('input', function(e) {
-        if (e.target.type === 'number') {
-            updateTotal();
-        }
-    });
+    // Écouter les changements dans les inputs
+    form.addEventListener('input', updateTotal);
 
-    // Écoute les clics sur les boutons d'incrémentation
+    // Écouter les clics sur les boutons d'incrémentation
     document.querySelectorAll('.round-increment-btn').forEach(button => {
         button.addEventListener('click', function() {
             const fieldName = this.dataset.champ;
             const step = parseFloat(this.dataset.pas);
             const input = form.querySelector(`input[name="${fieldName}"]`);
-
             if (input) {
-                const isDecimal = input.step === '0.01';
-                let currentValue = isDecimal ? parseFloat(input.value) || 0 : parseInt(input.value) || 0;
-                input.value = isDecimal ? (currentValue + step).toFixed(2) : currentValue + step;
-                input.dispatchEvent(new Event('input')); // Déclenche le recalcul
+                let currentValue = parseFloat(input.value) || 0;
+                input.value = currentValue + step;
+                updateTotal(); // Mise à jour immédiate
             }
         });
     });
