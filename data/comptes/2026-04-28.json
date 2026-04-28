@@ -1,0 +1,19 @@
+{
+    "date": "2026-04-28",
+    "pieces": {
+        "10cts": "1",
+        "20cts": "1",
+        "50cts": "1",
+        "1euro": "1",
+        "2euros": "1"
+    },
+    "billets": {
+        "5euros": "1",
+        "10euros": "1",
+        "20euros": "1"
+    },
+    "bancontact": {
+        "Total Bancontact": "2"
+    },
+    "total": 40.8
+}

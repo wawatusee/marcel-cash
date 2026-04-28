@@ -152,13 +152,17 @@ if ($dateConsultation && file_exists("data/comptes/{$dateConsultation}.json")) {
     <ul class="liste-comptes">
         <?php
         $fichiersComptes = listerComptes();
-        foreach ($fichiersComptes as $fichier): ?>
+        foreach ($fichiersComptes as $fichier) {
+            // Extraire la date depuis le nom du fichier (ex: "2026-04-27.json" → "2026-04-27")
+            $dateStr = str_replace('.json', '', $fichier);
+            $date = DateTime::createFromFormat('Y-m-d', $dateStr);
+            ?>
             <li>
                 <a href="index.php?date=<?= urlencode($fichier) ?>">
-                    <?= date('d/m/Y', strtotime($fichier)) ?>
+                    <?= $date ? $date->format('d/m/Y') : $fichier ?>
                 </a>
             </li>
-        <?php endforeach; ?>
+        <?php } ?>
     </ul>
 
     <script src="assets/js/script.js"></script>
