@@ -1,0 +1,44 @@
+{
+    "pieces": [
+        {
+            "nom": "10cts",
+            "valeur": 0.1
+        },
+        {
+            "nom": "20cts",
+            "valeur": 0.2
+        },
+        {
+            "nom": "50cts",
+            "valeur": 0.5
+        },
+        {
+            "nom": "1euro",
+            "valeur": 1
+        },
+        {
+            "nom": "2euros",
+            "valeur": 2
+        }
+    ],
+    "billets": [
+        {
+            "nom": "5euros",
+            "valeur": 5
+        },
+        {
+            "nom": "10euros",
+            "valeur": 10
+        },
+        {
+            "nom": "20euros",
+            "valeur": 20
+        }
+    ],
+    "bancontact": [
+        {
+            "nom": "Total Bancontact",
+            "valeur": 1
+        }
+    ]
+}

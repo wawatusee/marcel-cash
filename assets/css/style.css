@@ -1,0 +1,245 @@
+/* ===== RESET ET BASE ===== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* ===== LIENS ===== */
+a {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== TITRES ===== */
+h1, h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+h2 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* ===== FORMULAIRES ===== */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* ===== CHAMPS AVEC BOUTONS (STYLE CALCULETTE) ===== */
+.calculator-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.increment-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.round-increment-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.round-increment-btn:hover {
+    background-color: #0b7dda;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.field-input {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.field-input label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.field-input input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: right;
+    box-sizing: border-box;
+    background-color: #fefefe;
+}
+
+/* ===== BOUTONS (GÉNÉRAUX) ===== */
+button,
+.admin-button,
+.retour-caisse-button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px 5px 0;
+}
+
+/* Bouton principal (Enregistrer) */
+button[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+    background: #45a049;
+}
+
+/* Bouton Admin */
+.admin-button {
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    float: right;
+}
+
+.admin-button:hover {
+    background-color: #e64a19;
+}
+
+/* Bouton "Retour à la caisse" */
+.retour-caisse-button {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.retour-caisse-button:hover {
+    background-color: #45a049;
+}
+
+/* ===== CONTAINERS ===== */
+.admin-button-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* ===== LISTES (Comptes précédents) ===== */
+.liste-comptes {
+    list-style: none;
+    padding: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.liste-comptes li {
+    padding: 10px 12px;
+    margin: 5px 0;
+    background: #f5f5f5;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.liste-comptes li:hover {
+    background: #e0e0e0;
+}
+
+.liste-comptes a {
+    color: #2c3e50;
+    display: block;
+}
+/* Style pour le total estimé */
+.total-estime {
+    text-align: right; /* Alignement à droite */
+    font-size: 18px; /* Taille de police plus grande */
+    margin: 20px 0 10px 0;
+    padding: 10px;
+    background-color: #e8f5e9; /* Fond vert clair */
+    border-radius: 6px;
+    border-left: 4px solid #4CAF50; /* Bande verticale verte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.total-estime strong {
+    font-size: 20px; /* Texte en gras plus grand */
+    color: #2e7d32; /* Vert foncé pour le montant */
+}
+
+#total {
+    font-weight: bold;
+    font-size: 22px; /* Taille encore plus grande pour le montant */
+    text-align: right; /* Alignement à droite */
+}
+
+/* ===== MESSAGES (Succès/Erreur) ===== */
+.success {
+    color: #2e7d32;
+    font-weight: bold;
+    padding: 10px;
+    background: #e8f5e9;
+    border-radius: 4px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* ===== RESPONSIVE (Mobile) ===== */
+@media (max-width: 600px) {
+    .calculator-field {
+        /* flex-direction: column; */ /* Retiré comme demandé */
+        align-items: flex-start;
+    }
+
+    .increment-buttons {
+        margin-bottom: 0; /* Plus besoin de marge si alignement horizontal */
+    }
+
+    .field-input input[type="number"] {
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
